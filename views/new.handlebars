@@ -1,0 +1,45 @@
+<h1 class="mb-1 restaurant-show-title">新增餐廳</h1>
+<div class="container" id="createRestaurant" style="width: 40%"> 
+    <form action="/restaurant" method="POST">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">餐廳名稱</label>
+            <input type="text" class="form-control" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">餐廳英文名稱</label>
+            <input type="text" class="form-control" name="name_en">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">食物種類</label>
+            <input type="text" class="form-control" name="category" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">照片</label>
+            <input type="text" class="form-control" name="image">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">地址</label>
+            <input type="text" class="form-control" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">電話</label>
+            <input type="text" class="form-control" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">地圖</label>
+            <input type="text" class="form-control" name="google_map">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">評分</label>
+            <input type="number" class="form-control" name="rating" placeholder="1到5分" min="1" max="5" step="0.1" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">敘述</label>
+            <textarea class="form-control" name="description" rows="5"></textarea>
+        </div>
+        <button type="submit">新增</button>
+        <a href="/">
+            <button type="button">返回</button>
+        </a>
+    </form>
+</div>   
