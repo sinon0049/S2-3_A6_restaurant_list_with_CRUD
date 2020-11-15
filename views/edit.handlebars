@@ -14,7 +14,7 @@
             <input type="text" class="form-control" name="category" value="{{restaurant.category}}" required>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">照片</label>
+            <label for="exampleFormControlInput1">照片連結</label>
             <input type="text" class="form-control" name="image" value="{{restaurant.image}}">
         </div>
         <div class="form-group">
@@ -26,7 +26,7 @@
             <input type="text" class="form-control" name="phone" value="{{restaurant.phone}}" required>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">地圖</label>
+            <label for="exampleFormControlInput1">Google map連結</label>
             <input type="text" class="form-control" name="google_map" value="{{restaurant.google_map}}">
         </div>
         <div class="form-group">
@@ -34,12 +34,12 @@
             <input type="number" class="form-control" name="rating" placeholder="1到5分" min="1" max="5" value="{{restaurant.rating}}" step="0.1" required>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">敘述</label>
+            <label for="exampleFormControlTextarea1">想說的話</label>
             <textarea class="form-control" name="description" rows="5">{{restaurant.description}}</textarea>
         </div>
-        <button type="submit">確認修改</button>
+        <button type="button submit" class="btn btn-info">確認修改</button>
         <a href="/">
-            <button type="button">返回</button>
+            <button type="button" class="btn btn-info">返回</button>
         </a>
     </form>
 </div>   

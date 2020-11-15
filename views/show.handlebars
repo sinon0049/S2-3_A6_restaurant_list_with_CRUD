@@ -17,9 +17,11 @@
                         地址：
                 </span>
                 {{restaurant.location}}
-                <a href="{{restaurant.google_map}}" class="text-secondary" target="_blank">
-                    <i class="fas fa-location-arrow pr-2 fa-xs"></i>
-                </a>
+                {{#if restaurant.google_map}}
+                    <a href="{{restaurant.google_map}}" class="text-secondary" target="_blank">
+                        <i class="fas fa-location-arrow pr-2 fa-xs"></i>
+                    </a>
+                {{/if}}
             </p>
 
             <p class="mb-1">
@@ -37,9 +39,9 @@
             <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}" style="max-width: 600px;">
             <form class="deleteBtn" action="/restaurants/{{restaurant._id}}/delete" method="POST" style="display: inline; position: absolute; right: 1rem;">
                 <a href="/restaurants/{{restaurant._id}}/edit">
-                    <button type="button">edit</button>
+                    <button type="button" class="btn btn-info">edit</button>
                 </a>
-                <button type="submit">delete</button>
+                <button type="button submit" class="btn btn-info">delete</button>
             </form>
         </div>
     </div>

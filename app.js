@@ -1,3 +1,4 @@
+//assign port and load required modules
 const express = require('express')
 const app = express()
 const port = 3000
@@ -7,14 +8,14 @@ const bodyParser = require('body-parser')
 //get restaurant.js
 const Restaurant = require('./models/restaurant')
 
+//set handlebars and body-parser
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
+//connect and get connection status of database
 mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
-
-//get connection status of database
 const db = mongoose.connection
 db.on('error', () => {
     console.log('mongodb error!')
@@ -38,7 +39,6 @@ app.get('/restaurants/:id', (req,res) => {
     .lean()
     .then(restaurant => res.render('show', { restaurant }))
     .catch(error => console.log(error))
-    
 })
 
 //delete restaurant
@@ -91,17 +91,16 @@ app.post('/restaurants/:id', (req, res) => {
     .catch(error => console.log(error))
 })
 
-
-/*search function to be modified
+//search function
 app.get('/search', (req, res) => {
-    const restaurants = restaurantList.results.filter(restaurant => {
-        return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
-    })
-    res.render('index', {restaurants: restaurants, keyword: keyword})
+    const keyword = req.query.keyword.trim()
+    return Restaurant.find({$or: [{name: { "$regex": keyword, "$options": "i" }}, {name_en: { "$regex": keyword, "$options": "i" }}, {category: { "$regex": keyword, "$options": "i" }}]})
+    .lean()
+    .then(restaurant => res.render('index', { restaurant, keyword }))
+    .catch(error => console.log(error))
 })
-*/
 
-
+//listen server
 app.listen(port , () => {
     console.log(`Restaurant list is running on http://localhost:${port}`)
 })
