@@ -2,7 +2,7 @@
 <div class="container" id="createRestaurant" style="width: 40%"> 
     <form action="/restaurant" method="POST">
         <div class="form-group">
-            <label for="exampleFormControlInput1">餐廳名稱</label>
+            <label for="exampleFormControlInput1">餐廳名稱(必填)</label>
             <input type="text" class="form-control" name="name" required>
         </div>
         <div class="form-group">
@@ -10,19 +10,19 @@
             <input type="text" class="form-control" name="name_en">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">食物種類</label>
+            <label for="exampleFormControlInput1">食物種類(必填)</label>
             <input type="text" class="form-control" name="category" required>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">照片連結</label>
-            <input type="text" class="form-control" name="image">
+            <label for="exampleFormControlInput1">照片連結(必填)</label>
+            <input type="text" class="form-control" name="image" required>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">地址</label>
+            <label for="exampleFormControlInput1">地址(必填)</label>
             <input type="text" class="form-control" name="location" required>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">電話</label>
+            <label for="exampleFormControlInput1">電話(必填)</label>
             <input type="text" class="form-control" name="phone" required>
         </div>
         <div class="form-group">
@@ -30,7 +30,7 @@
             <input type="text" class="form-control" name="google_map">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">評分</label>
+            <label for="exampleFormControlInput1">評分(必填)</label>
             <input type="number" class="form-control" name="rating" placeholder="1到5分" min="1" max="5" step="0.1" required>
         </div>
         <div class="form-group">
